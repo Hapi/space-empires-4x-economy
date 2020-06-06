@@ -24,25 +24,23 @@ export class NumberSelectorComponent implements OnInit, AfterContentChecked
     @Input()
     public valueCoefficient: number = 1.0;
 
-    public type: string = this.kAdditive;
-
-    private _additiveCoefficient: number = 1;
-
     @Input()
     set isAdditive(value: boolean)
     {
         this.type = value ? this.kAdditive : this.kDeductive;
         this._additiveCoefficient = value ? 1 : -1;
     }
-
-    public _values: number[] = [];
-
-    public _selectedValue: number;
-
-    public value: number;
-
+   
     @Output()
     public valueChanged: EventEmitter<number> = new EventEmitter<number>();
+ 
+    public value: number;
+    
+    public type: string = this.kAdditive;
+    private _additiveCoefficient: number = 1;
+    public _values: number[] = [];
+    public _selectedValue: number;
+
 
     public constructor(private cdRef: ChangeDetectorRef)
     {}

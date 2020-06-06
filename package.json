@@ -23,6 +23,7 @@
     "bootstrap": "^4.5.0",
     "ngx-bootstrap": "^5.6.1",
     "rxjs": "~6.5.4",
+    "ts-enum-util": "^4.0.2",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
   },

@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
 /* colors generated at https://themestr.app/theme (GREYSON selection) */
-$primary:#2f3c48;
+$primary:#576f86;
 $secondary:#6f7f8c;
 $success:#3e4d59;
 $danger:#cc330d;
@@ -12,7 +12,8 @@ $dark:#1e2b37;
 
 $theme-colors: (
     "additive":#209790,
-    "deductive": #D6634E
+    "deductive": #D6634E,
+    "tech": #1e2b37
 );
 
 
@@ -24,9 +25,11 @@ $theme-colors: (
     margin-bottom: 15px;
 }
 
-number-selector .badge {
-    height: 39px;
-    padding: 13px;
-    margin-left: 10px;
-    font-size: medium;
+number-selector {
+    .badge {
+        height: 39px;
+        padding: 13px;
+        margin-left: 10px;
+        font-size: medium;
+    }
 }

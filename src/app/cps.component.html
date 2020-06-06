@@ -56,5 +56,11 @@
             [step]="1"
             [isAdditive]="false"
         ></number-selector>
+
+        <div class="label">Space wreck technology</div>
+        <div class="btn-group btn-group-sm" btnRadioGroup [(ngModel)]="spaceWreck">
+            <label *ngFor="let item of SpaceWreck.getEntries()" class="btn btn-primary" btnRadio="{{ item[0] }}" tabindex="0" role="button">{{ item[1] }}</label>
+        </div>
+        
     </div>
 </div>
