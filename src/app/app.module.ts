@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,6 +10,8 @@ import { TechComponent } from './tech.component';
 import { ShipsComponent } from './ships.component';
 import { HeaderComponent } from './header.component';
 import { TabsModule } from 'ngx-bootstrap/tabs';
+import { ButtonsModule } from 'ngx-bootstrap/buttons';
+import { NumberSelectorComponent } from './number-selector.component';
 
 @NgModule({
     declarations: [
@@ -17,12 +20,15 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
         HeaderComponent,
         CPsComponent,
         TechComponent,
-        ShipsComponent
+        ShipsComponent,
+        NumberSelectorComponent,
     ],
     imports: [
         BrowserModule,
         AppRoutingModule,
-        TabsModule.forRoot()
+        FormsModule,
+        TabsModule.forRoot(),
+        ButtonsModule.forRoot()
     ],
     providers: [],
     bootstrap: [AppComponent]

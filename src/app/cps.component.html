@@ -1,6 +1,59 @@
 
 <div class="card">
     <div class="card-body">
-        <button type="button" class="btn btn-primary">Testi</button>
+        Total: {{ total }}
+    </div>
+    <div class="card-body">
+        <number-selector
+            (valueChanged)="homePlanet=$event;setTotalValue()"
+            [label]="'Home planet'"
+            [startValue]="5"
+            [numOfItems]="4"
+            [step]="5"
+        ></number-selector>
+        <number-selector
+            (valueChanged)="colonies1=$event;setTotalValue()"
+            [label]="'Number of colonies producing 1 CP'"
+            [startValue]="0"
+            [numOfItems]="11"
+            [step]="1"
+        ></number-selector>
+        <number-selector
+            (valueChanged)="colonies3=$event;setTotalValue()"
+            [label]="'Number of colonies producing 3 CP'"
+            [startValue]="0"
+            [numOfItems]="11"
+            [step]="1"
+            [valueCoefficient]="3"
+            ></number-selector>
+        <number-selector
+            (valueChanged)="colonies5=$event;setTotalValue()"
+            [label]="'Number of colonies producing 5 CP'"
+            [startValue]="0"
+            [numOfItems]="11"
+            [step]="1"
+            [valueCoefficient]="5"
+        ></number-selector>
+        <number-selector
+            (valueChanged)="minerals=$event;setTotalValue()"
+            [label]="'Minerals'"
+            [startValue]="0"
+            [numOfItems]="11"
+            [step]="5"
+        ></number-selector>
+        <number-selector
+            (valueChanged)="msPipelines=$event;setTotalValue()"
+            [label]="'MS Pipelines'"
+            [startValue]="0" 
+            [numOfItems]="16"
+            [step]="1"
+        ></number-selector>
+        <number-selector
+            (valueChanged)="turnOrderBid=$event;setTotalValue()"
+            [label]="'Turn order bid'"
+            [startValue]="0"
+            [numOfItems]="16"
+            [step]="1"
+        ></number-selector>
     </div>
 </div>

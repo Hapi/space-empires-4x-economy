@@ -1,0 +1,5 @@
+<div class="label">{{ label }}</div>
+<div class="btn-group" btnRadioGroup [(ngModel)]="_selectedValue">
+    <label *ngFor="let item of _values" (click)="setValue()" class="btn btn-info" btnRadio="{{ item }}" tabindex="0" role="button">{{ item }}</label>
+</div>
+<span class="badge badge-primary">{{ value }}</span>
