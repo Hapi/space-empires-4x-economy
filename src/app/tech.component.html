@@ -1,5 +1,67 @@
 <div class="card">
     <div class="card-body">
-        Tech
+        <tech-selector
+            [label]="'Ship Size'"
+            [startFromOne]="true"
+            [prices]="[10, 15, 20, 25, 30]"
+        ></tech-selector>
+        <tech-selector
+            [label]="'Attack'"
+            [prices]="[20, 30, 40]"
+        ></tech-selector>
+        <tech-selector
+            [label]="'Defence'"
+            [prices]="[20, 30, 40]"
+        ></tech-selector>
+        <tech-selector
+            [label]="'Tactics'"
+            [prices]="[20, 30, 40]"
+        ></tech-selector>
+        <tech-selector
+            [label]="'Move'"
+            [startFromOne]="true"
+            [prices]="[20, 30, 40, 40, 40]"
+        ></tech-selector>
+        <tech-selector
+            [label]="'Ship Yard'"
+            [startFromOne]="true"
+            [prices]="[20, 30]"
+        ></tech-selector>
+        <tech-selector
+            [label]="'Terraforming'"
+            [prices]="[25]"
+        ></tech-selector>
+        <tech-selector
+            [label]="'Exploration'"
+            [prices]="[15]"
+        ></tech-selector>
+    </div>
+</div>
+<div class="card">
+    <div class="card-body">
+        <tech-selector
+            [label]="'Fighters'"
+            [prices]="[25, 30, 40]"
+        ></tech-selector>
+        <tech-selector
+            [label]="'Point Defence'"
+            [prices]="[20, 25, 30]"
+        ></tech-selector>
+        <tech-selector
+            [label]="'Cloacking'"
+            [prices]="[30, 40]"
+        ></tech-selector>
+        <tech-selector
+            [label]="'Scanners'"
+            [prices]="[20, 30]"
+        ></tech-selector>
+        <tech-selector
+            [label]="'Mines'"
+            [prices]="[20]"
+        ></tech-selector>
+        <tech-selector
+            [label]="'Mine Sweeper'"
+            [prices]="[10, 20]"
+        ></tech-selector>
     </div>
 </div>
