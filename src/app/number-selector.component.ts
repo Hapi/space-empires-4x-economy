@@ -6,6 +6,9 @@ import { Component, Input, Output, OnInit, EventEmitter, AfterContentChecked, Ch
 })
 export class NumberSelectorComponent implements OnInit, AfterContentChecked
 {
+    private readonly kAdditive: string = "additive";
+    private readonly kDeductive: string = "deductive";
+
     @Input()
     public label: string = "";
 
@@ -20,6 +23,17 @@ export class NumberSelectorComponent implements OnInit, AfterContentChecked
 
     @Input()
     public valueCoefficient: number = 1.0;
+
+    public type: string = this.kAdditive;
+
+    private _additiveCoefficient: number = 1;
+
+    @Input()
+    set isAdditive(value: boolean)
+    {
+        this.type = value ? this.kAdditive : this.kDeductive;
+        this._additiveCoefficient = value ? 1 : -1;
+    }
 
     public _values: number[] = [];
 
@@ -44,7 +58,7 @@ export class NumberSelectorComponent implements OnInit, AfterContentChecked
 
     public setValue()
     {
-        this.value = this._selectedValue ? this._selectedValue * this.valueCoefficient : undefined;
+        this.value = this._selectedValue ? this._selectedValue * this.valueCoefficient * this._additiveCoefficient : undefined;
         this.valueChanged.emit(this.value);
     }
 
@@ -56,3 +70,4 @@ export class NumberSelectorComponent implements OnInit, AfterContentChecked
         // this.cdRef.reattach();
     }
 }
+ 

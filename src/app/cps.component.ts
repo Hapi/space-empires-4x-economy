@@ -24,7 +24,7 @@ export class CPsComponent
                 + this.colonies3
                 + this.colonies5
                 + this.minerals
-                - this.msPipelines
-                - this.turnOrderBid;
+                + this.msPipelines
+                + this.turnOrderBid;
     }
 }

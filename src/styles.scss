@@ -10,7 +10,14 @@ $warning:#6e9fa5;
 $light:#eceeec;
 $dark:#1e2b37;
 
+$theme-colors: (
+    "additive":#209790,
+    "deductive": #D6634E
+);
+
+
 @import "~bootstrap/scss/bootstrap.scss";
+
 
 .page-header {
     background-color: #5c8f94;
