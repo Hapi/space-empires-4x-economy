@@ -1,12 +1,13 @@
 <div class="label">{{ label }}</div>
 <div class="btn-group" btnRadioGroup [(ngModel)]="_selectedValue">
     <label
-        *ngFor="let item of prices; let i = index" 
-        class="btn btn-{{ i == 0 ? 'primary' : 'outline-tech' }}"
-        [disabled]="false"
-        [uncheckable]="true" 
-        btnRadio="{{ i + (startFromOne ? 1 : 0) }}"
+        *ngFor="let item of prices; let i = index"
+        class="btn btn-{{ i == 0 ? 'primary' : (i < _selectedValue ? 'tech' : 'outline-tech') }}"
+        (click)="setValue()"
+        [disabled]="!((i == 1 && _selectedValue == undefined) || i == _selectedValue - _startValue - 1 || i == _selectedValue - _startValue + 1)"
+        [uncheckable]="false"
+        btnRadio="{{ _startValue + i }}"
         tabindex="0"
         role="button"
-    ><span class="tech-level">{{ i + (startFromOne ? 1 : 0) }} </span><span class="tech-value">{{ i > 0 ? "(" + item + ")" : "" }}</span></label>
+    ><span class="tech-level">{{ _startValue + i }} </span><span class="tech-value">{{ i > 0 ? "(" + item + ")" : "" }}</span></label>
 </div>

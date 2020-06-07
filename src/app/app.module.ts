@@ -13,6 +13,7 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { NumberSelectorComponent } from './number-selector.component';
 import { TechSelectorComponent } from './tech-selector.component';
+import { VarDirective } from './ngvar.directive';
 
 @NgModule({
     declarations: [
@@ -23,7 +24,8 @@ import { TechSelectorComponent } from './tech-selector.component';
         TechComponent,
         ShipsComponent,
         NumberSelectorComponent,
-        TechSelectorComponent
+        TechSelectorComponent,
+        VarDirective
     ],
     imports: [
         BrowserModule,
