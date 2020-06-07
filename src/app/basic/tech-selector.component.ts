@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class TechSelectorComponent implements OnInit
 {
     @Input()
-    public label: string = "";
+    public label: string;
 
     @Input()
     public startFromOne: false;
@@ -22,7 +22,7 @@ export class TechSelectorComponent implements OnInit
     {
         // Adds zero as a first element.
         this.prices.splice(0, 0, 0);
-        
+
         this._startValue = this.startFromOne ? 1 : 0;
     }
 

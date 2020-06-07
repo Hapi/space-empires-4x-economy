@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SpaceWreck, SpaceWreckKeys } from './types';
+import { SpaceWreck, SpaceWreckKeys } from '../basic/types';
 import { $enum } from "ts-enum-util";
 
 

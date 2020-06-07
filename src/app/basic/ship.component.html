@@ -1,0 +1,18 @@
+<div class="row">
+    <div class="col">{{ type }}</div>
+    <div class="col">
+        <tech-view [max]="maxAttack" [value]="attack"></tech-view>
+    </div>
+    <div class="col">
+        <tech-view [max]="maxDefense" [value]="defense"></tech-view>
+    </div>
+    <div class="col">
+        <tech-view [max]="3" [value]="tactics"></tech-view>
+    </div>
+    <div class="col">
+        <tech-view *ngIf="move != undefined" [max]="6" [startFromOne]="true" [value]="move"></tech-view>
+    </div>
+    <div class="col">
+        <ng-content></ng-content>
+    </div>
+</div>

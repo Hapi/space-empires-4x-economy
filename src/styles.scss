@@ -39,8 +39,24 @@ tech-selector {
         font-weight: bold;
         font-size: larger;
     }
-
     .tech-value {
         font-size: small;
     }
+    // .btn {
+    //     &:disabled {
+    //         pointer-events: none;
+    //         &:hover {
+    //             background-color: white;
+    //         }
+    //     }
+    // }
+}
+
+tech-view {
+    // .label {
+    //     font-size: xx-small;
+    // }
+    // .btn {
+    //     font-size: xx-small;
+    // }
 }
