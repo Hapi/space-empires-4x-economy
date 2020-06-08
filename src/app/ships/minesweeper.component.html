@@ -1,11 +1,6 @@
 <ship
-    [type]="'SW #'.concat(id.toString())"
-    [maxAttack]="1"
-    [attack]="attack"
-    [maxDefense]="1"
-    [defense]="defense"
-    [tactics]="tactics"
-    [move]="move"
+    [type]="'SW'"
+    [shipBase]="this"
 >
     <tech-view [label]="'Mine Sw:'" [max]="2" [value]="mineSweeping"></tech-view>
 </ship>

@@ -1,4 +1,6 @@
 import { Component, Input } from '@angular/core';
+import { ShipBase } from '../ships/ship-base';
+import { MovementTypes, gMovementTypes } from './types';
 
 @Component({
     selector: 'ship',
@@ -6,24 +8,13 @@ import { Component, Input } from '@angular/core';
 })
 export class ShipComponent
 {
+    public _movementTypes: MovementTypes = gMovementTypes;
+
     @Input()
     public type: string;
 
     @Input()
-    public maxAttack: number = 0;
+    public shipBase: ShipBase;
 
-    @Input()
-    public attack: number = 0;
-
-    @Input()
-    public maxDefense: number = 0;
-    
-    @Input()
-    public defense: number = 0;
-
-    @Input()
-    public tactics: number = 0;
-
-    @Input()
-    public move: number;
+    public _calculated: number = 0;
 }

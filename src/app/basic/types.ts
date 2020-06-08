@@ -9,3 +9,27 @@ export enum SpaceWreck
     SHIP_YARD = "(10) Ship Yard"
 }
 export type SpaceWreckKeys = keyof typeof SpaceWreck;
+
+
+export enum ShipClass
+{
+    NONE,
+    A,
+    B,
+    C,
+    D,
+    E
+}
+export type ShipClassKeys = keyof typeof ShipClass;
+
+export type MovementTypes = Array<{turn1: number, turn2: number, turn3: number}>;
+
+export const gMovementTypes: MovementTypes = [
+    { turn1: 1, turn2: 1, turn3: 1},
+    { turn1: 1, turn2: 1, turn3: 2},
+    { turn1: 1, turn2: 2, turn3: 2},
+    { turn1: 2, turn2: 2, turn3: 2},
+    { turn1: 2, turn2: 2, turn3: 3},
+    { turn1: 2, turn2: 3, turn3: 3},
+    { turn1: 3, turn2: 3, turn3: 3}
+];

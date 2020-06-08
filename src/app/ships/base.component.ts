@@ -3,13 +3,13 @@ import { ShipBase } from './ship-base';
 import { ShipClass } from '../basic/types';
 
 @Component({
-    selector: 'ship-yard',
-    templateUrl: './ship-yard.component.html'
+    selector: 'star-base',
+    templateUrl: './base.component.html'
 })
-export class ShipYardComponent extends ShipBase
+export class StarBaseComponent extends ShipBase
 {
     public constructor()
     {
-        super(3, 0, 1, ShipClass.C);
+        super(7, 2, 3, ShipClass.A);
     }
 }

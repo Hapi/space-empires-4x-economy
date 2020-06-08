@@ -27,6 +27,7 @@ import { MinesweeperComponent } from './ships/minesweeper.component';
 import { RaiderComponent } from './ships/raider.component';
 import { ScoutComponent } from './ships/scout.component';
 import { ShipYardComponent } from './ships/ship-yard.component';
+import { StarBaseComponent } from './ships/base.component';
 
 
 @NgModule({
@@ -42,6 +43,8 @@ import { ShipYardComponent } from './ships/ship-yard.component';
         TechSelectorComponent,
         VarDirective,
         TechViewComponent,
+        BattleCruiserComponent,
+        StarBaseComponent,
         BattleCruiserComponent,
         BattleshipComponent,
         CarrierComponent,

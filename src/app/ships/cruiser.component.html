@@ -1,11 +1,6 @@
 <ship
-    [type]="'CA #'.concat(id.toString())"
-    [maxAttack]="2"
-    [attack]="attack"
-    [maxDefense]="2"
-    [defense]="defense"
-    [tactics]="tactics"
-    [move]="move"
+    [type]="'CA'"
+    [shipBase]="this"
 >
     <tech-view [label]="'Exploration:'" [max]="1" [value]="exploration"></tech-view>
 </ship>

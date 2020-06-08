@@ -1,7 +1,14 @@
 import { Input } from '@angular/core';
+import { ShipClass } from '../basic/types';
 
 export abstract class ShipBase
 {
+    @Input()
+    public calculatedView: boolean;
+
+    @Input()
+    public type: string;
+
     @Input()
     public id: number;
 
@@ -17,6 +24,13 @@ export abstract class ShipBase
     @Input()
     public move: number;
 
-    @Input()
-    public pointDefence: number;
+    protected constructor(
+        public attackStrength: number,
+        public defenseStrength: number,
+        public hullSize: number,
+        protected shipClass: ShipClass
+    )
+    {
+        // Does nothing.   
+    }
 }

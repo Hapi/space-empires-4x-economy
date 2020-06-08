@@ -1,10 +1,6 @@
 <ship
-    [type]="'Fighter #'.concat(id.toString())"
-    [maxAttack]="1"
-    [attack]="attack"
-    [maxDefense]="1"
-    [defense]="defense"
-    [tactics]="tactics"
+    [type]="'Fighter'"
+    [shipBase]="this"
 >
     <tech-view [label]="'Fighters:'" [max]="3" [value]="fighters"></tech-view>
 </ship>

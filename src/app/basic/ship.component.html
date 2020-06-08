@@ -1,17 +1,39 @@
 <div class="row">
-    <div class="col">{{ type }}</div>
-    <div class="col">
-        <tech-view [max]="maxAttack" [value]="attack"></tech-view>
-    </div>
-    <div class="col">
-        <tech-view [max]="maxDefense" [value]="defense"></tech-view>
-    </div>
-    <div class="col">
-        <tech-view [max]="3" [value]="tactics"></tech-view>
-    </div>
-    <div class="col">
-        <tech-view *ngIf="move != undefined" [max]="6" [startFromOne]="true" [value]="move"></tech-view>
-    </div>
+    <div class="col">{{ type }} #{{ shipBase.id }}</div>
+    <ng-container *ngIf="!shipBase.calculatedView; else calculated">
+        <div class="col">
+            <tech-view [max]="shipBase.hullSize" [value]="shipBase.attack"></tech-view>
+        </div>
+        <div class="col">
+            <tech-view [max]="shipBase.hullSize" [value]="shipBase.defense"></tech-view>
+        </div>
+        <div class="col">
+            <tech-view [max]="3" [value]="shipBase.tactics"></tech-view>
+        </div>
+        <div class="col">
+            <tech-view *ngIf="shipBase.move != undefined" [max]="6" [startFromOne]="true" [value]="shipBase.move"></tech-view>
+        </div>
+    </ng-container>
+    <ng-template #calculated>
+        <div class="col">
+            {{ shipBase.attackStrength }} + {{ shipBase.attack }} = <span class="badge badge-secondary">{{ shipBase.attackStrength + shipBase.attack }}</span>
+        </div>
+        <div class="col">
+            {{ shipBase.defenseStrength }} + {{ shipBase.defense }} = <span class="badge badge-secondary">{{ shipBase.defenseStrength + shipBase.defense }}</span>
+        </div>
+        <div class="col">
+            <tech-view [max]="3" [value]="shipBase.tactics"></tech-view>
+        </div>
+        <div class="col">
+            <span
+                *ngIf="shipBase.move != undefined"
+            >
+                M1: <span class="badge badge-secondary">{{ _movementTypes[shipBase.move - 1].turn1 }}</span>
+                , M2: <span class="badge badge-secondary">{{ _movementTypes[shipBase.move - 1].turn2 }}</span>
+                , M3: <span class="badge badge-secondary">{{ _movementTypes[shipBase.move - 1].turn3 }}</span>
+            </span>
+        </div>
+    </ng-template>
     <div class="col">
         <ng-content></ng-content>
     </div>

@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
 })
 export class ShipsComponent 
 {
-    
+    public _calculated: number = 0;
 }
