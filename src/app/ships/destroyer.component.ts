@@ -13,6 +13,18 @@ export class DestroyerComponent extends ShipBase
 
     public constructor()
     {
-        super(4, 0, 1, ShipClass.D);
+        super(
+            "DD",
+            "Destroyer",
+            9,
+            4,
+            0,
+            1,
+            ShipClass.D,
+            [
+                "Must have Ship Size Technology of 2 or more to build.",
+                "Can detect cloaked ships (raiders) depending on level of scanning technology."
+            ]
+        );
     }
 }

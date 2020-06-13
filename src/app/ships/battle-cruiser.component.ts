@@ -10,6 +10,17 @@ export class BattleCruiserComponent extends ShipBase
 {
     public constructor()
     {
-        super(5, 1, 2, ShipClass.B);
+        super(
+            "BC",
+            "Battlecruiser",
+            15,
+            5,
+            1,
+            2,
+            ShipClass.B,
+            [
+                "Must have Ship Size Technology of 4 or more to build."
+            ]
+        );
     }
 }

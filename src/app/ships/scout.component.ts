@@ -9,10 +9,21 @@ import { ShipClass } from '../basic/types';
 export class ScoutComponent extends ShipBase
 {
     @Input()
-    public pointDefence: number;
+    public pointDefense: number;
 
     public constructor()
     {
-        super(3, 0, 1, ShipClass.E);
+        super(
+            "SC",
+            "Scout",
+            6,
+            3,
+            0,
+            1,
+            ShipClass.E,
+            [
+                "May have increased firepower versus Fighters depending on level of point defense technology - A6 at PD1, A7 at PD2, A8 at PD3."
+            ]
+        );
     }
 }

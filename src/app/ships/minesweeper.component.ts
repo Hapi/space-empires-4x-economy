@@ -13,6 +13,17 @@ export class MinesweeperComponent extends ShipBase
 
     public constructor()
     {
-        super(1, 0, 1, ShipClass.E);
+        super(
+            "SW",
+            "Mine Sweeper",
+            6,
+            1,
+            0,
+            1,
+            ShipClass.E,
+            [
+                "Must have Mine Sweeper Technology of 1 or more to build. Ship removes some mines before combat."
+            ]
+        );
     }
 }

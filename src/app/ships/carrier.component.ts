@@ -10,6 +10,19 @@ export class CarrierComponent extends ShipBase
 {
     public constructor()
     {
-        super(3, 0, 1, ShipClass.E);
+        super(
+            "CV",
+            "Carrier",
+            12,
+            3,
+            0,
+            1,
+            ShipClass.E,
+            [
+                "Can carry up to 3 Fighter squadrons.",
+                "Must have Fighter Technology to build.",
+                "The Carrier may participate in combat, but can not be targeted until all friendly Fighters (not just those on that particular carrier) present in the battle are destroyed."
+            ]
+        );
     }
 }

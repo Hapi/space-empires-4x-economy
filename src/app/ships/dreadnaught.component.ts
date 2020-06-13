@@ -10,6 +10,17 @@ export class DreadnaughtComponent extends ShipBase
 {
     public constructor()
     {
-        super(6, 3, 3, ShipClass.A);
+        super(
+            "DN",
+            "Dreadnaught",
+            24,
+            6,
+            3,
+            3,
+            ShipClass.A,
+            [
+                "Must have Ship Size Technology of 6 to build."
+            ]
+        );
     }
 }

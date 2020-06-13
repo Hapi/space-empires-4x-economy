@@ -11,16 +11,16 @@
         <ng-template #elseText>Calculated Values</ng-template>
         <div class="container-fluid">
             <div class="row">
-                <div class="col">Counter</div>
-                <div class="col">Attack</div>
-                <div class="col">Defense</div>
-                <div class="col">Tactics</div>
-                <div class="col">Move</div>
-                <div class="col">Other</div>
+                <div class="col-4 pl-0">Counter</div>
+                <div class="col-1 pl-0">Attack</div>
+                <div class="col-1 pl-0">Defense</div>
+                <div class="col-1 pl-0">Tactics</div>
+                <div class="col-2 pl-0">Move</div>
+                <div class="col pl-0">Other</div>
             </div>
-            <scout [calculatedView]="_calculated == 1" [id]="1" [attack]="0" [defense]="0" [tactics]="2" [move]="2" [pointDefence]="0"></scout>
-            <scout [calculatedView]="_calculated == 1" [id]="2" [attack]="1" [defense]="0" [tactics]="1" [move]="1" [pointDefence]="1"></scout>
-            <destroyer [calculatedView]="_calculated == 1" [id]="1" [attack]="1" [defense]="0" [tactics]="1" [move]="1" [scanners]="1"></destroyer>
+            <scout [calculatedView]="_calculated == 1" [fleetSize]="1" [id]="1" [attack]="0" [defense]="0" [tactics]="2" [move]="2" [pointDefense]="0"></scout>
+            <scout [calculatedView]="_calculated == 1" [fleetSize]="3" [id]="2" [attack]="1" [defense]="0" [tactics]="1" [move]="1" [pointDefense]="1"></scout>
+            <destroyer [calculatedView]="_calculated == 1" [fleetSize]="2" [id]="1" [attack]="1" [defense]="0" [tactics]="1" [move]="1" [scanners]="1"></destroyer>
             <cruiser [calculatedView]="_calculated == 1" [id]="1" [attack]="1" [defense]="0" [tactics]="1" [move]="1" [exploration]="1"></cruiser>
             <battle-cruiser [calculatedView]="_calculated == 1"  [id]="1" [attack]="1" [defense]="0" [tactics]="1" [move]="1"></battle-cruiser>
             <battleship [calculatedView]="_calculated == 1"  [id]="1" [attack]="1" [defense]="2" [tactics]="1" [move]="1"></battleship>

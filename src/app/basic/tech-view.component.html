@@ -1,12 +1,16 @@
-<span *ngIf="label != undefined" class="label mr-1">{{ label }}</span>
-<div class="btn-group" btnRadioGroup>
-    <button
-        *ngFor="let item of [].constructor(max + _zeroCompensation); let i = index"
-        class="btn btn-{{ (i - _zeroCompensation < value ? '' : 'outline-') }}tech pt-0 pb-0 pl-2 pr-2"
-        [disabled]="true"
-        [uncheckable]="false"
-        btnRadio="{{ _startValue + i }}"
-        tabindex="0"
-        role="button"
-    ><span class="tech-level">{{ _startValue + i }}</span></button>
+<div class="row">
+    <div *ngIf="label != undefined" class="col-3 label pl-0 pr-0 mr-1 mt-1">{{ label }}</div>
+    <div class="col pl-0">
+        <div class="btn-group" btnRadioGroup>
+            <button
+                *ngFor="let item of [].constructor(max + _zeroCompensation); let i = index"
+                class="btn btn-{{ (i - _zeroCompensation < value ? '' : 'outline-') }}tech pt-0 pb-0 pl-2 pr-2"
+                [disabled]="true"
+                [uncheckable]="false"
+                btnRadio="{{ _startValue + i }}"
+                tabindex="0"
+                role="button"
+            ><span class="tech-level">{{ _startValue + i }}</span></button>
+        </div>
+    </div>
 </div>

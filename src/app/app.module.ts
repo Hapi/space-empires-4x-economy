@@ -1,6 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { TabsModule } from 'ngx-bootstrap/tabs';
+import { ButtonsModule } from 'ngx-bootstrap/buttons';
+import { PopoverModule } from 'ngx-bootstrap/popover';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,8 +13,6 @@ import { CPsComponent } from './presentation/cps.component';
 import { TechComponent } from './presentation/tech.component';
 import { ShipsComponent } from './presentation/ships.component';
 import { HeaderComponent } from './presentation/header.component';
-import { TabsModule } from 'ngx-bootstrap/tabs';
-import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { NumberSelectorComponent } from './basic/number-selector.component';
 import { TechSelectorComponent } from './basic/tech-selector.component';
 import { VarDirective } from './directives/ngvar.directive';
@@ -62,7 +64,9 @@ import { StarBaseComponent } from './ships/base.component';
         AppRoutingModule,
         FormsModule,
         TabsModule.forRoot(),
-        ButtonsModule.forRoot()
+        ButtonsModule.forRoot(),
+        PopoverModule.forRoot(),
+        TooltipModule.forRoot()
     ],
     providers: [],
     bootstrap: [AppComponent]

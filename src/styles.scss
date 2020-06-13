@@ -7,7 +7,7 @@ $success:#3e4d59;
 $danger:#cc330d;
 $info:#5c8f94;
 $warning:#6e9fa5;
-$light:#eceeec;
+$light:#dadbc3;
 $dark:#1e2b37;
 
 $theme-colors: (
@@ -53,10 +53,10 @@ tech-selector {
 }
 
 tech-view {
-    // .label {
-    //     font-size: xx-small;
-    // }
-    // .btn {
-    //     font-size: xx-small;
-    // }
+    .label {
+        font-size: small;
+    }
+    .btn {
+        font-size: small;
+    }
 }

@@ -13,6 +13,17 @@ export class FighterComponent extends ShipBase
 
     public constructor()
     {
-        super(0, 0, 1, ShipClass.NONE);
+        super(
+            "F",
+            "Fighter",
+            5,
+            0,
+            0,
+            1,
+            ShipClass.B,
+            [
+                "Must have have Fighter 1 - 3 Technology."
+            ]
+        );
     }
 }

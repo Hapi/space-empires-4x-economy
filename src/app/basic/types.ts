@@ -33,3 +33,5 @@ export const gMovementTypes: MovementTypes = [
     { turn1: 2, turn2: 3, turn3: 3},
     { turn1: 3, turn2: 3, turn3: 3}
 ];
+
+export type FleetSize = 0 | 1 | 2 | 3 | 4 | 5 | 6;

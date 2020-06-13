@@ -1,40 +1,104 @@
 <div class="row">
-    <div class="col">{{ type }} #{{ shipBase.id }}</div>
+    <div class="col-4 pl-0">
+        <div class="row">
+            <div class="col-8">
+                <span>({{ shipBase.type }}) {{ shipBase.name }} #{{ shipBase.id }} </span>
+                <span class="badge badge-light">{{ shipBase.fleetSize }}</span>
+            </div>
+            <div class="col">
+                <ng-template #shipInfoTemplate><div [innerHtml]="_helpHtml"></div></ng-template>
+                <a
+                    href="#"
+                    class="badge badge-info"
+                    [popover]="shipInfoTemplate"
+                    [popoverTitle]="'(' + shipBase.type + ') ' + shipBase.name + ' info'"
+                    [outsideClick]="true"
+                    container="body"
+                >
+                    <svg class="bi bi-question" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5.25 6.033h1.32c0-.781.458-1.384 1.36-1.384.685 0 1.313.343 1.313 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.007.463h1.307v-.355c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.326 0-2.786.647-2.754 2.533zm1.562 5.516c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z"/>
+                    </svg>                    
+                </a>
+                <a href="#" class="badge badge-additive" tooltip="Buy ships" [delay]="500" triggers="mouseenter:click hover">
+                    <svg class="bi bi-plus-circle" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M8 3.5a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5H4a.5.5 0 0 1 0-1h3.5V4a.5.5 0 0 1 .5-.5z"/>
+                        <path fill-rule="evenodd" d="M7.5 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0V8z"/>
+                        <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                    </svg>
+                </a>
+                <a href="#" class="badge badge-deductive" tooltip="Scuttle a ship" [delay]="500" triggers="mouseenter:click hover">
+                    <svg class="bi bi-dash-circle" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                        <path fill-rule="evenodd" d="M3.5 8a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.5-.5z"/>
+                    </svg>
+                </a>
+                <a href="#" class="badge badge-primary" tooltip="Upgrade ships" [delay]="500" triggers="mouseenter:click hover">
+                    <svg class="bi bi-arrow-bar-up" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M11.354 5.854a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L8 3.207l2.646 2.647a.5.5 0 0 0 .708 0z"/>
+                        <path fill-rule="evenodd" d="M8 10a.5.5 0 0 0 .5-.5V3a.5.5 0 0 0-1 0v6.5a.5.5 0 0 0 .5.5zm-4.8 1.6c0-.22.18-.4.4-.4h8.8a.4.4 0 0 1 0 .8H3.6a.4.4 0 0 1-.4-.4z"/>
+                    </svg>
+                </a>
+                <a href="#" class="badge badge-secondary" tooltip="Transfer ships to another group" [delay]="500" triggers="mouseenter:click hover">
+                    <svg class="bi bi-arrow-bar-right" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M10.146 4.646a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L12.793 8l-2.647-2.646a.5.5 0 0 1 0-.708z"/>
+                        <path fill-rule="evenodd" d="M6 8a.5.5 0 0 1 .5-.5H13a.5.5 0 0 1 0 1H6.5A.5.5 0 0 1 6 8zm-2.5 6a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 1 0v11a.5.5 0 0 1-.5.5z"/>
+                    </svg>
+                    <!-- <svg class="bi bi-box-arrow-right" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M11.646 11.354a.5.5 0 0 1 0-.708L14.293 8l-2.647-2.646a.5.5 0 0 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0z"/>
+                        <path fill-rule="evenodd" d="M4.5 8a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5z"/>
+                        <path fill-rule="evenodd" d="M2 13.5A1.5 1.5 0 0 1 .5 12V4A1.5 1.5 0 0 1 2 2.5h7A1.5 1.5 0 0 1 10.5 4v1.5a.5.5 0 0 1-1 0V4a.5.5 0 0 0-.5-.5H2a.5.5 0 0 0-.5.5v8a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 .5-.5v-1.5a.5.5 0 0 1 1 0V12A1.5 1.5 0 0 1 9 13.5H2z"/>
+                    </svg> -->
+                </a>
+            </div>
+        </div>
+    </div>
     <ng-container *ngIf="!shipBase.calculatedView; else calculated">
-        <div class="col">
+        <div class="col-1">
             <tech-view [max]="shipBase.hullSize" [value]="shipBase.attack"></tech-view>
         </div>
-        <div class="col">
+        <div class="col-1">
             <tech-view [max]="shipBase.hullSize" [value]="shipBase.defense"></tech-view>
         </div>
-        <div class="col">
+        <div class="col-1">
             <tech-view [max]="3" [value]="shipBase.tactics"></tech-view>
         </div>
-        <div class="col">
+        <div class="col-2">
             <tech-view *ngIf="shipBase.move != undefined" [max]="6" [startFromOne]="true" [value]="shipBase.move"></tech-view>
         </div>
     </ng-container>
     <ng-template #calculated>
-        <div class="col">
-            {{ shipBase.attackStrength }} + {{ shipBase.attack }} = <span class="badge badge-secondary">{{ shipBase.attackStrength + shipBase.attack }}</span>
+        <div class="col-1">
+            <div class="row">
+                <div class="col pl-0">
+                    {{ shipBase.attackStrength }} + {{ shipBase.attack }} = <span class="badge badge-secondary">{{ shipBase.attackStrength + shipBase.attack }}</span>
+                </div>
+            </div>
         </div>
-        <div class="col">
-            {{ shipBase.defenseStrength }} + {{ shipBase.defense }} = <span class="badge badge-secondary">{{ shipBase.defenseStrength + shipBase.defense }}</span>
+        <div class="col-1">
+            <div class="row">
+                <div class="col pl-0">
+                    {{ shipBase.defenseStrength }} + {{ shipBase.defense }} = <span class="badge badge-secondary">{{ shipBase.defenseStrength + shipBase.defense }}</span>
+                </div>
+            </div>
         </div>
-        <div class="col">
+        <div class="col-1">
             <tech-view [max]="3" [value]="shipBase.tactics"></tech-view>
         </div>
-        <div class="col">
-            <span
-                *ngIf="shipBase.move != undefined"
-            >
-                M1: <span class="badge badge-secondary">{{ _movementTypes[shipBase.move - 1].turn1 }}</span>
-                , M2: <span class="badge badge-secondary">{{ _movementTypes[shipBase.move - 1].turn2 }}</span>
-                , M3: <span class="badge badge-secondary">{{ _movementTypes[shipBase.move - 1].turn3 }}</span>
-            </span>
+        <div class="col-2">
+            <div class="row">
+                <div class="col pl-0">
+                    <span
+                        *ngIf="shipBase.move != undefined"
+                    >
+                        M1: <span class="badge badge-secondary">{{ _movementTypes[shipBase.move - 1].turn1 }}</span>
+                        , M2: <span class="badge badge-secondary">{{ _movementTypes[shipBase.move - 1].turn2 }}</span>
+                        , M3: <span class="badge badge-secondary">{{ _movementTypes[shipBase.move - 1].turn3 }}</span>
+                    </span>
+                </div>
+            </div>
         </div>
     </ng-template>
-    <div class="col">
+    <div class="col p-0">
         <ng-content></ng-content>
     </div>
 </div>
