@@ -1,4 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
+@use "sass:color";
 
 /* colors generated at https://themestr.app/theme (GREYSON selection) */
 $primary:#576f86;
@@ -9,11 +9,22 @@ $info:#5c8f94;
 $warning:#ffba3a;
 $light:#dadbc3;
 $dark:#1e2b37;
+$tech: #1e2b37;
+$tech2: #6D767E;
+$total: rgb(130, 154, 177);
+$move1: $total;
+$move2: color.scale($move1, $lightness: -30%);
+$move3: color.scale($move1, $lightness: -60%);
 
 $theme-colors: (
     "additive":#209790,
     "deductive": #D6634E,
-    "tech": #1e2b37
+    "tech": $tech,
+    "tech2": $tech2,
+    "total": $total,
+    "move-1": $move1,
+    "move-2": $move2,
+    "move-3": $move3,
 );
 
 
@@ -59,4 +70,8 @@ tech-view {
     .btn {
         font-size: small;
     }
+}
+
+ships .sheet-title {
+    font-weight: bold;
 }

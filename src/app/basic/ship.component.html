@@ -63,14 +63,14 @@
         <div class="col-1">
             <div class="row">
                 <div class="col pl-0">
-                    {{ shipBase.attackStrength }} + {{ shipBase.attack }} = <span class="badge badge-secondary">{{ shipBase.attackStrength + shipBase.attack }}</span>
+                    {{ shipBase.attackStrength }} + <span class="badge badge-tech2">{{ shipBase.attack }}</span> = <span class="badge badge-pill badge-total">{{ shipBase.attackStrength + shipBase.attack }}</span>
                 </div>
             </div>
         </div>
         <div class="col-1">
             <div class="row">
                 <div class="col pl-0">
-                    {{ shipBase.defenseStrength }} + {{ shipBase.defense }} = <span class="badge badge-secondary">{{ shipBase.defenseStrength + shipBase.defense }}</span>
+                    {{ shipBase.defenseStrength }} + <span class="badge badge-tech2">{{ shipBase.defense }}</span> = <span class="badge badge-pill badge-total">{{ shipBase.defenseStrength + shipBase.defense }}</span>
                 </div>
             </div>
         </div>
@@ -83,9 +83,9 @@
                     <span
                         *ngIf="shipBase.move != undefined"
                     >
-                        M1: <span class="badge badge-secondary">{{ _movementTypes[shipBase.move - 1].turn1 }}</span>
-                        , M2: <span class="badge badge-secondary">{{ _movementTypes[shipBase.move - 1].turn2 }}</span>
-                        , M3: <span class="badge badge-secondary">{{ _movementTypes[shipBase.move - 1].turn3 }}</span>
+                        T<sub>1</sub>: <span class="badge badge-pill badge-move-{{ _movementTypes[shipBase.move - 1].turn1 }}">{{ _movementTypes[shipBase.move - 1].turn1 }}</span>
+                        T<sub>2</sub>: <span class="badge badge-pill badge-move-{{ _movementTypes[shipBase.move - 1].turn2 }}">{{ _movementTypes[shipBase.move - 1].turn2 }}</span>
+                        T<sub>3</sub>: <span class="badge badge-pill badge-move-{{ _movementTypes[shipBase.move - 1].turn3 }}">{{ _movementTypes[shipBase.move - 1].turn3 }}</span>
                     </span>
                 </div>
             </div>
