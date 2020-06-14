@@ -2,13 +2,27 @@
     <div class="card-body">
         <button
             type="button"
-            class="btn btn-primary"
-            [(ngModel)]="_calculated"
-            btnCheckbox
-            btnCheckboxTrue="1"
-            btnCheckboxFalse="0"
-        >Show <span *ngIf="_calculated == 1; else elseText">Tech Sheet</span></button>
-        <ng-template #elseText>Calculated Values</ng-template>
+            class="btn btn-additive mr-2"
+        >
+            Buy ships
+            <svg class="bi bi-plus-circle" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M8 3.5a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5H4a.5.5 0 0 1 0-1h3.5V4a.5.5 0 0 1 .5-.5z"/>
+                <path fill-rule="evenodd" d="M7.5 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0V8z"/>
+                <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+            </svg>
+        </button>
+        <button
+            type="button"
+            class="btn btn-warning mr-2"
+        >
+            Wait, I mean...
+            <svg class="bi bi-arrow-counterclockwise" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M12.83 6.706a5 5 0 0 0-7.103-3.16.5.5 0 1 1-.454-.892A6 6 0 1 1 2.545 5.5a.5.5 0 1 1 .91.417 5 5 0 1 0 9.375.789z"/>
+                <path fill-rule="evenodd" d="M7.854.146a.5.5 0 0 0-.708 0l-2.5 2.5a.5.5 0 0 0 0 .708l2.5 2.5a.5.5 0 1 0 .708-.708L5.707 3 7.854.854a.5.5 0 0 0 0-.708z"/>
+            </svg>
+        </button>
+        <input type="checkbox" class="mr-1" [(ngModel)]="_calculated" name="calculated-values" id="calculated-values">
+        <label for="calculated-values">Show calculated values</label>
         <div class="container-fluid">
             <div class="row">
                 <div class="col-4 pl-0">Counter</div>
@@ -21,16 +35,16 @@
             <scout [calculatedView]="_calculated == 1" [fleetSize]="1" [id]="1" [attack]="0" [defense]="0" [tactics]="2" [move]="2" [pointDefense]="0"></scout>
             <scout [calculatedView]="_calculated == 1" [fleetSize]="3" [id]="2" [attack]="1" [defense]="0" [tactics]="1" [move]="1" [pointDefense]="1"></scout>
             <destroyer [calculatedView]="_calculated == 1" [fleetSize]="2" [id]="1" [attack]="1" [defense]="0" [tactics]="1" [move]="1" [scanners]="1"></destroyer>
-            <cruiser [calculatedView]="_calculated == 1" [id]="1" [attack]="1" [defense]="0" [tactics]="1" [move]="1" [exploration]="1"></cruiser>
-            <battle-cruiser [calculatedView]="_calculated == 1"  [id]="1" [attack]="1" [defense]="0" [tactics]="1" [move]="1"></battle-cruiser>
-            <battleship [calculatedView]="_calculated == 1"  [id]="1" [attack]="1" [defense]="2" [tactics]="1" [move]="1"></battleship>
-            <dreadnaught [calculatedView]="_calculated == 1"  [id]="1" [attack]="1" [defense]="0" [tactics]="1" [move]="1"></dreadnaught>
-            <ship-yard [calculatedView]="_calculated == 1"  [id]="1" [attack]="1" [defense]="0" [tactics]="1"></ship-yard>
-            <star-base [calculatedView]="_calculated == 1"  [id]="1" [attack]="1" [defense]="0" [tactics]="1"></star-base>
-            <fighter [calculatedView]="_calculated == 1"  [id]="1" [attack]="1" [defense]="0" [tactics]="1" [fighters]="1"></fighter>
-            <carrier [calculatedView]="_calculated == 1"  [id]="1" [attack]="1" [defense]="0" [tactics]="1" [move]="1"></carrier>
-            <raider [calculatedView]="_calculated == 1"  [id]="1" [attack]="1" [defense]="0" [tactics]="1" [move]="1" [cloaking]="1"></raider>
-            <minesweeper [calculatedView]="_calculated == 1"  [id]="1" [attack]="1" [defense]="0" [tactics]="1" [move]="1" [mineSweeping]="1"></minesweeper>
+            <cruiser [calculatedView]="_calculated == 1" [fleetSize]="2" [id]="1" [attack]="1" [defense]="0" [tactics]="1" [move]="1" [exploration]="1"></cruiser>
+            <battle-cruiser [calculatedView]="_calculated == 1" [fleetSize]="2" [id]="1" [attack]="1" [defense]="0" [tactics]="1" [move]="1"></battle-cruiser>
+            <battleship [calculatedView]="_calculated == 1" [fleetSize]="6" [id]="1" [attack]="1" [defense]="2" [tactics]="1" [move]="1"></battleship>
+            <dreadnaught [calculatedView]="_calculated == 1" [fleetSize]="2" [id]="1" [attack]="1" [defense]="0" [tactics]="1" [move]="1"></dreadnaught>
+            <ship-yard [calculatedView]="_calculated == 1" [fleetSize]="2" [id]="1" [attack]="1" [defense]="0" [tactics]="1"></ship-yard>
+            <star-base [calculatedView]="_calculated == 1" [fleetSize]="2" [id]="1" [attack]="1" [defense]="0" [tactics]="1"></star-base>
+            <fighter [calculatedView]="_calculated == 1" [fleetSize]="5" [id]="1" [attack]="1" [defense]="0" [tactics]="1" [fighters]="1"></fighter>
+            <carrier [calculatedView]="_calculated == 1" [fleetSize]="2" [id]="1" [attack]="1" [defense]="0" [tactics]="1" [move]="1"></carrier>
+            <raider [calculatedView]="_calculated == 1" [fleetSize]="4" [id]="1" [attack]="1" [defense]="0" [tactics]="1" [move]="1" [cloaking]="1"></raider>
+            <minesweeper [calculatedView]="_calculated == 1" [fleetSize]="2" [id]="1" [attack]="1" [defense]="0" [tactics]="1" [move]="1" [mineSweeping]="1"></minesweeper>
         </div>
     </div>
 </div>
