@@ -1,8 +1,9 @@
 <div class="card">
-    <div class="card-body">
+    <div *ngIf="!_shopOpen" class="card-body">
         <button
             type="button"
             class="btn btn-additive mr-2"
+            (click)="openShop()"
         >
             Buy ships
             <svg class="bi bi-plus-circle" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -22,16 +23,16 @@
             </svg>
         </button>
         <input type="checkbox" class="mr-1" [(ngModel)]="_calculated" name="calculated-values" id="calculated-values">
-        <label for="calculated-values">Show calculated values</label>
+        <label class="user-select-none" for="calculated-values">Show calculated values</label>
         <div class="container-fluid">
-            <div class="sheet-title row">
+            <!-- <div class="sheet-title row">
                 <div class="col-4 pl-0">Counter</div>
                 <div class="col-1 pl-0">Attack</div>
                 <div class="col-1 pl-0">Defense</div>
                 <div class="col-1 pl-0">Tactics</div>
                 <div class="col-2 pl-0">Move</div>
-                <div class="col pl-0">Other</div>
-            </div>
+                <div class="col-2 pl-0">Other</div>
+            </div> -->
             <scout [calculatedView]="_calculated == 1" [fleetSize]="1" [id]="1" [attack]="0" [defense]="0" [tactics]="2" [move]="2" [pointDefense]="0"></scout>
             <scout [calculatedView]="_calculated == 1" [fleetSize]="3" [id]="2" [attack]="1" [defense]="0" [tactics]="1" [move]="1" [pointDefense]="1"></scout>
             <destroyer [calculatedView]="_calculated == 1" [fleetSize]="2" [id]="1" [attack]="1" [defense]="0" [tactics]="1" [move]="6" [scanners]="1"></destroyer>
@@ -46,6 +47,10 @@
             <raider [calculatedView]="_calculated == 1" [fleetSize]="4" [id]="1" [attack]="1" [defense]="0" [tactics]="1" [move]="1" [cloaking]="1"></raider>
             <minesweeper [calculatedView]="_calculated == 1" [fleetSize]="2" [id]="1" [attack]="1" [defense]="0" [tactics]="1" [move]="1" [mineSweeping]="1"></minesweeper>
         </div>
+    </div>
+    
+    <div *ngIf="_shopOpen" class="card-body">
+        MIU
     </div>
 </div>
     

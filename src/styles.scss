@@ -72,6 +72,14 @@ tech-view {
     }
 }
 
-ships .sheet-title {
-    font-weight: bold;
+ships {
+    .sheet-title {
+        font-weight: bold;
+    }
+
+    .calculated {
+        .attack, .defense {
+            letter-spacing: 0.4px;
+        }
+    }
 }

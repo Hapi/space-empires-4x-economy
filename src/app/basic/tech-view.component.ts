@@ -20,10 +20,20 @@ export class TechViewComponent implements OnInit
 
     public _startValue: number;
     public _zeroCompensation: number;
+    public _shortLabel: string;
 
     ngOnInit(): void
     {
         this._startValue = this.startFromOne ? 1 : 0;
         this._zeroCompensation = this.startFromOne ? 0 : 1;
+        if(this.label) {
+            this._shortLabel = "";
+            let tokens: string[] = this.label.split(" ");
+            if(tokens.length > 1)
+                tokens.forEach(t => this._shortLabel += t[0]);
+            else
+                this._shortLabel = this.label.substr(0, 3);
+        }
+
     }
 }

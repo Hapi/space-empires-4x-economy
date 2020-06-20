@@ -1,11 +1,13 @@
 <div class="row">
-    <div class="col-4 pl-0">
+    <div class="col-sm-7 col-md-7 col-lg-5 col-xl-4 pl-0">
         <div class="row">
-            <div class="col-7">
-                <span class="badge badge-light mr-2" tooltip="Number of ships in a group" [delay]="500">{{ shipBase.fleetSize }}</span>
-                <span>(<strong>{{ shipBase.type }}</strong>) {{ shipBase.name }} <span class="badge badge-pill badge-primary">#{{ shipBase.id }}</span></span>
-            </div>
             <div class="col">
+                <span class="badge badge-light mr-2" tooltip="Number of ships in a group" [delay]="500">{{ shipBase.fleetSize }}</span>
+                <span class="d-none d-md-inline">(<strong>{{ shipBase.type }}</strong>) {{ shipBase.name }} </span>
+                <span class="d-md-none">{{ shipBase.type }} </span>
+                <span class="badge badge-pill badge-primary">#{{ shipBase.id }}</span>
+            </div>
+            <div class="col-auto">
                 <a href="#" class="badge badge-deductive mr-1" tooltip="Scuttle a ship" [delay]="500" triggers="mouseenter:click hover">
                     <svg class="bi bi-dash-circle" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
@@ -34,7 +36,7 @@
                     href="#"
                     class="badge badge-info"
                     [popover]="shipInfoTemplate"
-                    [popoverTitle]="'(' + shipBase.type + ') ' + shipBase.name + ' info'"
+                    [popoverTitle]="'(' + shipBase.type + ') ' + shipBase.name"
                     [outsideClick]="true"
                     container="body"
                 >
@@ -46,38 +48,38 @@
         </div>
     </div>
     <ng-container *ngIf="!shipBase.calculatedView; else calculated">
-        <div class="col-1">
+        <div class="col-sm-auto col-lg-1 non-calculated attack">
             <tech-view [max]="shipBase.hullSize" [value]="shipBase.attack"></tech-view>
         </div>
-        <div class="col-1">
+        <div class="col-sm-auto col-lg-1 non-calculated defense">
             <tech-view [max]="shipBase.hullSize" [value]="shipBase.defense"></tech-view>
         </div>
-        <div class="col-1">
+        <div class="col-sm-auto col-lg-1 non-calculated tactics">
             <tech-view [max]="3" [value]="shipBase.tactics"></tech-view>
         </div>
-        <div class="col-2">
+        <div class="col-sm-1 col-lg-2 non-calculated move">
             <tech-view *ngIf="shipBase.move != undefined" [max]="6" [startFromOne]="true" [value]="shipBase.move"></tech-view>
         </div>
     </ng-container>
     <ng-template #calculated>
-        <div class="col-1">
+        <div class="col-1 calculated attack">
             <div class="row">
                 <div class="col pl-0">
-                    {{ shipBase.attackStrength }} + <span class="badge badge-tech2">{{ shipBase.attack }}</span> = <span class="badge badge-pill badge-total">{{ shipBase.attackStrength + shipBase.attack }}</span>
+                    {{ shipBase.attackStrength }}+<span class="badge badge-tech2">{{ shipBase.attack }}</span>=<span class="badge badge-pill badge-total">{{ shipBase.attackStrength + shipBase.attack }}</span>
                 </div>
             </div>
         </div>
-        <div class="col-1">
+        <div class="col-1 calculated defense">
             <div class="row">
                 <div class="col pl-0">
-                    {{ shipBase.defenseStrength }} + <span class="badge badge-tech2">{{ shipBase.defense }}</span> = <span class="badge badge-pill badge-total">{{ shipBase.defenseStrength + shipBase.defense }}</span>
+                    {{ shipBase.defenseStrength }}+<span class="badge badge-tech2">{{ shipBase.defense }}</span>=<span class="badge badge-pill badge-total">{{ shipBase.defenseStrength + shipBase.defense }}</span>
                 </div>
             </div>
         </div>
-        <div class="col-1">
+        <div class="col-1 calculated tactics">
             <tech-view [max]="3" [value]="shipBase.tactics"></tech-view>
         </div>
-        <div class="col-2">
+        <div class="col-2 calculated move">
             <div class="row">
                 <div class="col pl-0">
                     <span
