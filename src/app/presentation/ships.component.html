@@ -22,17 +22,40 @@
                 <path fill-rule="evenodd" d="M7.854.146a.5.5 0 0 0-.708 0l-2.5 2.5a.5.5 0 0 0 0 .708l2.5 2.5a.5.5 0 1 0 .708-.708L5.707 3 7.854.854a.5.5 0 0 0 0-.708z"/>
             </svg>
         </button>
-        <input type="checkbox" class="mr-1" [(ngModel)]="_calculated" name="calculated-values" id="calculated-values">
-        <label class="user-select-none" for="calculated-values">Show calculated values</label>
+        <div>
+            <input type="checkbox" class="mr-1" [(ngModel)]="_calculated" name="calculated-values" id="calculated-values">
+            <label class="user-select-none" for="calculated-values">Show calculated values</label>
+        </div>
         <div class="container-fluid">
-            <!-- <div class="sheet-title row">
-                <div class="col-4 pl-0">Counter</div>
-                <div class="col-1 pl-0">Attack</div>
-                <div class="col-1 pl-0">Defense</div>
-                <div class="col-1 pl-0">Tactics</div>
-                <div class="col-2 pl-0">Move</div>
-                <div class="col-2 pl-0">Other</div>
-            </div> -->
+            <div class="sheet-title row">
+                <div class="col-5 col-sm-7 col-lg-5 col-xl-4 pl-0">Counter</div>
+                <div class="col-auto col-lg-1 pl-0">
+                    <span class="d-md-inline d-lg-none">A</span>
+                    <span class="d-none d-lg-inline d-xl-none">Att</span>
+                    <span class="d-none d-xl-inline">Attack</span>
+                </div>
+                <div class="col-auto col-lg-1 pl-0">
+                    <span class="d-md-inline d-lg-none">D</span>
+                    <span class="d-none d-lg-inline d-xl-none">Def</span>
+                    <span class="d-none d-xl-inline">Defense</span>
+                </div>
+                <div class="col-auto col-lg-1 pl-0">
+                    <span class="d-md-inline d-lg-none">T</span>
+                    <span class="d-none d-lg-inline d-xl-none">Tac</span>
+                    <span class="d-none d-xl-inline">Tactics</span>
+                </div>
+                <div class="col-auto col-lg-2 pl-0">
+                    <span class="d-md-inline d-lg-none">M</span>
+                    <span class="d-none d-lg-inline">Move</span>
+                </div>
+                <div class="col pl-0">Other</div>
+                <!-- <div class="col-5 col-sm-7 col-lg-5 col-xl-4 pl-0">Counter</div>
+                <div class="col-auto col-lg-1 pl-0">Attack</div>
+                <div class="col-auto col-lg-1 pl-0">Defense</div>
+                <div class="col-auto col-lg-1 pl-0">Tactics</div>
+                <div class="col-1 col-lg-2 pl-0">Move</div>
+                <div class="col pl-0">Other</div> -->
+            </div>
             <scout [calculatedView]="_calculated == 1" [fleetSize]="1" [id]="1" [attack]="0" [defense]="0" [tactics]="2" [move]="2" [pointDefense]="0"></scout>
             <scout [calculatedView]="_calculated == 1" [fleetSize]="3" [id]="2" [attack]="1" [defense]="0" [tactics]="1" [move]="1" [pointDefense]="1"></scout>
             <destroyer [calculatedView]="_calculated == 1" [fleetSize]="2" [id]="1" [attack]="1" [defense]="0" [tactics]="1" [move]="6" [scanners]="1"></destroyer>

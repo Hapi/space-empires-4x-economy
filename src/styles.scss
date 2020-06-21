@@ -78,6 +78,16 @@ ships {
     }
 
     .calculated {
+        @include media-breakpoint-down(lg) {
+            .col {
+                font-size: small;
+            }
+        }
+        @include media-breakpoint-down(md) {
+            .col {
+                font-size: unset;
+            }
+        }
         .attack, .defense {
             letter-spacing: 0.4px;
         }
