@@ -73,8 +73,59 @@ tech-view {
 }
 
 ships {
+    .card-body {
+        @media (max-width: 356px) {
+            padding: 2px
+        }
+    }
     .sheet-title {
         font-weight: bold;
+
+        .long {
+            @media (min-width: 992px) {
+                margin-left: -8px;
+            }
+        }
+        .short {
+
+        }
+        .non-calculated {
+            &.long {
+                @media (max-width: 359.98px) {
+                    display: none;
+                }
+                @media (min-width: 767px) and (max-width: 991.98px) {
+                    padding-left: 15px;
+                }
+            }
+            &.short {
+                @media (min-width: 360px) {
+                    display: none;
+                }
+            }
+        }
+        .calculated {
+            &.long {
+                @media (max-width: 766.98px) {
+                    display: none;
+                }
+                @media (min-width: 767px) and (max-width: 991.98px) {
+                    padding-left: 44px;
+                }
+            }
+            &.short {
+                @media (min-width: 767px) {
+                    display: none;
+                }
+                @media (max-width: 766.98px) {
+                    padding-left: 12px;
+                }
+            }
+        }
+        .letter {
+            padding-left: 7px;
+            padding-right: 11px;
+        }
     }
 
     .calculated {

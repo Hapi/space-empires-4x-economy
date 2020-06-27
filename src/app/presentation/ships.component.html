@@ -29,32 +29,34 @@
         <div class="container-fluid">
             <div class="sheet-title row">
                 <div class="col-5 col-sm-7 col-lg-5 col-xl-4 pl-0">Counter</div>
-                <div class="col-auto col-lg-1 pl-0">
-                    <span class="d-md-inline d-lg-none">A</span>
+                <div class="col-auto col-lg-1 pl-0 pr-0">
+                    <span class="letter d-md-inline d-lg-none">A</span>
                     <span class="d-none d-lg-inline d-xl-none">Att</span>
                     <span class="d-none d-xl-inline">Attack</span>
                 </div>
-                <div class="col-auto col-lg-1 pl-0">
-                    <span class="d-md-inline d-lg-none">D</span>
+                <div class="col-auto col-lg-1 pl-0 pr-0">
+                    <span class="letter d-md-inline d-lg-none">D</span>
                     <span class="d-none d-lg-inline d-xl-none">Def</span>
                     <span class="d-none d-xl-inline">Defense</span>
                 </div>
-                <div class="col-auto col-lg-1 pl-0">
-                    <span class="d-md-inline d-lg-none">T</span>
+                <div class="col-auto col-lg-1 pl-0 pr-0">
+                    <span class="letter d-md-inline d-lg-none">T</span>
                     <span class="d-none d-lg-inline d-xl-none">Tac</span>
                     <span class="d-none d-xl-inline">Tactics</span>
                 </div>
-                <div class="col-auto col-lg-2 pl-0">
-                    <span class="d-md-inline d-lg-none">M</span>
+                <div class="col-auto col-lg-2 pl-0 pr-0">
+                    <span *ngIf="!_calculated" class="letter d-md-inline d-lg-none">M</span>
+                    <span *ngIf="_calculated" class="letter d-md-inline d-lg-none">Move</span>
                     <span class="d-none d-lg-inline">Move</span>
                 </div>
-                <div class="col pl-0">Other</div>
-                <!-- <div class="col-5 col-sm-7 col-lg-5 col-xl-4 pl-0">Counter</div>
-                <div class="col-auto col-lg-1 pl-0">Attack</div>
-                <div class="col-auto col-lg-1 pl-0">Defense</div>
-                <div class="col-auto col-lg-1 pl-0">Tactics</div>
-                <div class="col-1 col-lg-2 pl-0">Move</div>
-                <div class="col pl-0">Other</div> -->
+                <div class="col pl-0 pr-0">
+                    <span class="{{ _calculated ? '' : 'non-' }}calculated other short">Ot</span>
+                    <span class="{{ _calculated ? '' : 'non-' }}calculated other long">Other</span>
+                    <!-- <span class="{{ !_calculated ? '' : 'non-' }}calculated">Ot</span>
+                    <span class="{{ _calculated ? '' : 'non-' }}calculated">Other</span> -->
+                </div>
+                <!-- <div *ngIf="!_calculated" class="col pl-0 pr-0">Other</div>
+                <div *ngIf="_calculated" class="col pl-3 pl-sm-5 pr-0">Ot</div> -->
             </div>
             <scout [calculatedView]="_calculated == 1" [fleetSize]="1" [id]="1" [attack]="0" [defense]="0" [tactics]="2" [move]="2" [pointDefense]="0"></scout>
             <scout [calculatedView]="_calculated == 1" [fleetSize]="3" [id]="2" [attack]="1" [defense]="0" [tactics]="1" [move]="1" [pointDefense]="1"></scout>
