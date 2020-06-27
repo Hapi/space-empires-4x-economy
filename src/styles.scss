@@ -73,11 +73,21 @@ tech-view {
 }
 
 ships {
+    .disabled {
+        color: lightgray;
+    }
+
     .card-body {
         @media (max-width: 356px) {
             padding: 2px
         }
     }
+
+    #calculated-values {
+        @media (max-width: 360px) {
+        }
+    }
+
     .sheet-title {
         font-weight: bold;
 
@@ -117,7 +127,10 @@ ships {
                 @media (min-width: 767px) {
                     display: none;
                 }
-                @media (max-width: 766.98px) {
+                @media (max-width: 379.98px) {
+                    margin-left: -4px;
+                }
+                @media (min-width:380px) and (max-width: 766.98px) {
                     padding-left: 12px;
                 }
             }
